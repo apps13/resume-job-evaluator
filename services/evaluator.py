@@ -50,6 +50,8 @@ class Evaluator:
 
     def evaluate(self, request: EvaluationRequest) -> EvaluationResult:
         """Original keyword-based evaluator."""
+        request.validate()
+
         job = None
         for item in JOB_DESCRIPTIONS:
             if item["job_id"] == request.job_id:
@@ -127,6 +129,8 @@ class Evaluator:
 
     def evaluate_with_llm(self, request: EvaluationRequest) -> EvaluationResult:
         """LLM-based evaluator with fallback to the original keyword logic."""
+        request.validate()
+
         job = None
         for item in JOB_DESCRIPTIONS:
             if item["job_id"] == request.job_id:

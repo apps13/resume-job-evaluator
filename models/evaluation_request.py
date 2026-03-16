@@ -12,3 +12,11 @@ class EvaluationRequest:
     resume_id: str
     job_id: str
     resume_text: str
+
+    def validate(self) -> None:
+        if not isinstance(self.resume_id, str) or not self.resume_id.strip():
+            raise ValueError("resume_id must be a non-empty string")
+        if not isinstance(self.job_id, str) or not self.job_id.strip():
+            raise ValueError("job_id must be a non-empty string")
+        if not isinstance(self.resume_text, str) or not self.resume_text.strip():
+            raise ValueError("resume_text must be a non-empty string")
