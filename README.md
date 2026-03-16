@@ -26,7 +26,7 @@ python app.py
 ```
 
 Notes:
-- If the LLM call fails, evaluation automatically falls back to your original raw keyword evaluator.
+- If the LLM call fails, evaluation automatically falls back to the original raw keyword evaluator.
 - `app.py` uses `Evaluator.evaluate_with_llm(...)` by default.
 - Your OpenAI key is read from your local `.env` file.
 
